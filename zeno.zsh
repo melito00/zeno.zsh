@@ -4,7 +4,9 @@ fi
 
 export ZENO_ROOT=${ZENO_ROOT:-${0:a:h}}
 
-path+=${ZENO_ROOT}/bin
+if [[ ":$PATH:" != *":${ZENO_ROOT}/bin:"* ]]; then
+  path+=${ZENO_ROOT}/bin
+fi
 
 () {
   local widget_dirs=(
